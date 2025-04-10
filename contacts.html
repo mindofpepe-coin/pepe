@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Explore the quantum leap of Pepe in Mind Made Meme, where digital culture meets philosophical depth. Dive into memetic philosophy and frog symbolism." name="description"/>
+<meta content="memetic philosophy, frog symbolism, digital meme culture, art of the meme, mind of pepe" name="keywords"/>
+<title>Leap_of_Pepe</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Courier+Prime&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+        font-family: 'Playfair Display', serif;
+        background-color: #F2E8C9;
+        color: #1C1C1C;
+        line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+    }
+    .accent-text {
+        font-family: 'Courier Prime', monospace;
+        color: #00FF41;
+    }
+    .glitch-effect {
+        position: relative;
+        color: #1C1C1C;
+        text-shadow: 0.05em 0 0 #00FF41, -0.05em -0.025em 0 #FFD700;
+        animation: glitch 725ms infinite;
+    }
+    @keyframes glitch {
+        0% {
+            text-shadow: 0.05em 0 0 #00FF41, -0.05em -0.025em 0 #FFD700;
+        }
+        15% {
+            text-shadow: -0.05em -0.025em 0 #00FF41, 0.025em 0.025em 0 #FFD700;
+        }
+        49% {
+            text-shadow: -0.05em -0.025em 0 #00FF41, 0.025em 0.025em 0 #FFD700;
+        }
+        50% {
+            text-shadow: 0.025em 0.05em 0 #00FF41, 0.05em 0 0 #FFD700;
+        }
+        99% {
+            text-shadow: 0.025em 0.05em 0 #00FF41, 0.05em 0 0 #FFD700;
+        }
+        100% {
+            text-shadow: -0.025em 0 0 #00FF41, -0.025em -0.025em 0 #FFD700;
+        }
+    }
+    .pixel-border {
+        border: 2px solid #FFD700;
+        image-rendering: pixelated;
+    }
+    .parallax-bg {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const glitchElements = document.querySelectorAll('.glitch-effect');
+        glitchElements.forEach(el => {
+            el.addEventListener('mouseover', () => {
+                el.style.animation = 'none';
+                el.offsetHeight;
+                el.style.animation = null;
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.pageYOffset;
+            document.body.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+        });
+
+        const cursorTrail = document.createElement('div');
+        cursorTrail.classList.add('cursor-trail');
+        document.body.appendChild(cursorTrail);
+
+        document.addEventListener('mousemove', (e) => {
+            cursorTrail.style.left = e.pageX + 'px';
+            cursorTrail.style.top = e.pageY + 'px';
+            setTimeout(() => {
+                cursorTrail.style.opacity = '0';
+            }, 500);
+        });
+    });
+</script>
+<div class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" id="cookie-popup" style="background-color: rgba(28, 28, 28, 0.8); z-index: 9999;">
+<div class="bg-light p-4 rounded" style="max-width: 400px; border: 2px solid #00FF41;">
+<h2 class="mb-3" style="font-family: 'Playfair Display', serif; color: #1C1C1C;">Memetic Cookie Consent</h2>
+<p style="font-family: 'Courier New', monospace; color: #1C1C1C;">In the quantum realm of Pepe, cookies are not just treats, but fragments of digital consciousness. Do you consent to our use of these mind-altering morsels?</p>
+<div class="d-flex justify-content-between mt-4">
+<button class="btn btn-success" id="accept-cookies" style="background-color: #00FF41; border-color: #00FF41; color: #1C1C1C; font-family: 'Courier New', monospace;">Embrace the Meme</button>
+<button class="btn btn-danger" id="reject-cookies" style="background-color: #FFD700; border-color: #FFD700; color: #1C1C1C; font-family: 'Courier New', monospace;">Reject the Matrix</button>
+</div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cookiePopup = document.getElementById('cookie-popup');
+    const acceptButton = document.getElementById('accept-cookies');
+    const rejectButton = document.getElementById('reject-cookies');
+
+    function hidePopup() {
+        cookiePopup.style.display = 'none !important';
+        cookiePopup.remove(); // Completely remove from DOM
+    }
+
+    function setCookieChoice(choice) {
+        localStorage.setItem('cookieChoice', choice);
+        hidePopup();
+    }
+
+    if (!localStorage.getItem('cookieChoice')) {
+        cookiePopup.style.display = 'flex';
+    } else {
+        hidePopup();
+    }
+
+    acceptButton.addEventListener('click', function() {
+        setCookieChoice('accepted');
+    });
+
+    rejectButton.addEventListener('click', function() {
+        setCookieChoice('rejected');
+    });
+
+    // Glitch effect on hover
+    [acceptButton, rejectButton].forEach(button => {
+        button.addEventListener('mouseover', function() {
+            this.style.transform = 'skew(2deg, 2deg)';
+            this.style.transition = 'transform 0.3s';
+        });
+        button.addEventListener('mouseout', function() {
+            this.style.transform = 'skew(0deg, 0deg)';
+        });
+    });
+});
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+#cookie-popup {
+    animation: flicker 5s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.9; }
+}
+
+#accept-cookies:hover, #reject-cookies:hover {
+    animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(2px, 2px); }
+    25% { transform: translate(-2px, -2px); }
+    50% { transform: translate(-2px, 2px); }
+    75% { transform: translate(2px, -2px); }
+    100% { transform: translate(2px, 2px); }
+}
+</style>
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+<div style="flex: 1;">
+<header>
+<div class="container-fluid bg-dark py-3">
+<div class="row align-items-center">
+<div class="col-md-3 text-center text-md-start">
+<a class="text-decoration-none" href="/">
+<h1 class="display-4 font-monospace text-glitchy-green" style="font-family: 'Courier New', monospace; color: #00FF41;">Leap_of_Pepe</h1>
+</a>
+</div>
+<div class="col-md-9">
+<nav class="navbar navbar-expand-lg navbar-dark">
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item mx-2">
+<a class="nav-link text-glitchy-green font-serif" href="posts.html" style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #00FF41;">Posts</a>
+</li>
+<li class="nav-item mx-2">
+<a class="nav-link text-glitchy-green font-serif" href="about.html" style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #00FF41;">About</a>
+</li>
+<li class="nav-item mx-2">
+<a class="nav-link text-glitchy-green font-serif" href="contacts.html" style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #00FF41;">Contacts</a>
+</li>
+<li class="nav-item mx-2">
+<a class="nav-link text-glitchy-green font-serif" href="privacy_policy.html" style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #00FF41;">Privacy Policy</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+    .text-glitchy-green {
+        color: #00FF41;
+        text-shadow: 2px 2px 4px rgba(0, 255, 65, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        transform: scale(1.05);
+        text-shadow: 0 0 10px #00FF41, 0 0 20px #00FF41, 0 0 30px #00FF41;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-nav {
+            text-align: center;
+        }
+    }
+</style>
+<script>
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('mouseover', () => {
+            link.style.textDecoration = 'line-through';
+            link.style.color = '#FFD700';
+        });
+        link.addEventListener('mouseout', () => {
+            link.style.textDecoration = 'none';
+            link.style.color = '#00FF41';
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var navbarToggler = document.querySelector('.navbar-toggler');
+        var navbarCollapse = document.querySelector('.navbar-collapse');
+
+        navbarToggler.addEventListener('click', function() {
+            navbarCollapse.classList.toggle('show');
+        });
+    });
+</script>
+</header>
+<div class="row">
+<div class="col-md-6">
+<div class="container-fluid p-4 bg-light">
+<h2 class="mb-4 text-center" style="font-family: 'Playfair Display', serif; color: #1C1C1C;">Connect with the Memetic Mindscape</h2>
+<div class="row">
+<div class="col-md-6 mb-4">
+<div class="card h-100 border-0 shadow-sm" style="background-color: #F2E8C9;">
+<div class="card-body">
+<h3 class="card-title mb-3" style="font-family: 'Courier New', monospace; color: #00FF41;">
+<i class="fas fa-map-marker-alt me-2" style="color: #FFD700;"></i>Physical Realm
+                    </h3>
+<p class="card-text" style="font-family: 'Baskerville', serif; line-height: 1.6;">
+                        Leap_of_Pepe Headquarters<br/>
+                        42 Quantum Avenue<br/>
+                        Memeville, MP 31415<br/>
+                        Dreamstate, Earth
+                    </p>
+</div>
+</div>
+</div>
+<div class="col-md-6 mb-4">
+<div class="card h-100 border-0 shadow-sm" style="background-color: #F2E8C9;">
+<div class="card-body">
+<h3 class="card-title mb-3" style="font-family: 'Courier New', monospace; color: #00FF41;">
+<i class="fas fa-phone-alt me-2" style="color: #FFD700;"></i>Telepathic Hotline
+                    </h3>
+<p class="card-text" style="font-family: 'Baskerville', serif; line-height: 1.6;">
+                        Main: +1 (888) MEME-LEAP<br/>
+                        Fax: +1 (888) PEPE-FAX<br/>
+                        Astral Expertjection: +1 (888) MIND-MELD
+                    </p>
+</div>
+</div>
+</div>
+<div class="col-md-6 mb-4">
+<div class="card h-100 border-0 shadow-sm" style="background-color: #F2E8C9;">
+<div class="card-body">
+<h3 class="card-title mb-3" style="font-family: 'Courier New', monospace; color: #00FF41;">
+<i class="fas fa-envelope me-2" style="color: #FFD700;"></i>Digital Transmission
+                    </h3>
+<p class="card-text" style="font-family: 'Baskerville', serif; line-height: 1.6;">
+                        General Inquiries: info@leapofpepe.com<br/>
+                        Meme Submissions: memes@leapofpepe.com<br/>
+                        Philosophical Musings: thoughts@leapofpepe.com
+                    </p>
+</div>
+</div>
+</div>
+<div class="col-md-6 mb-4">
+<div class="card h-100 border-0 shadow-sm" style="background-color: #F2E8C9;">
+<div class="card-body">
+<h3 class="card-title mb-3" style="font-family: 'Courier New', monospace; color: #00FF41;">
+<i class="fas fa-clock me-2" style="color: #FFD700;"></i>Temporal Coordinates
+                    </h3>
+<p class="card-text" style="font-family: 'Baskerville', serif; line-height: 1.6;">
+                        Monday - Friday: 9 AM - 5 PM (Local Time)<br/>
+                        Saturday: 10 AM - 2 PM (Dreamtime)<br/>
+                        Sunday: Closed for Memetic Meditation
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-4">
+<p style="font-family: 'Courier New', monospace; color: #1C1C1C; font-size: 0.9rem;">
+            "In the quantum realm of memes, every contact is a leap of faith." - Pepe the Wise
+        </p>
+</div>
+</div>
+<style>
+    .card {
+        transition: all 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    }
+    .card-title {
+        border-bottom: 2px solid #00FF41;
+        padding-bottom: 10px;
+    }
+    @media (max-width: 768px) {
+        .card {
+            margin-bottom: 20px;
+        }
+    }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('mouseover', () => {
+            card.style.backgroundColor = '#1C1C1C';
+            card.style.color = '#F2E8C9';
+        });
+        card.addEventListener('mouseout', () => {
+            card.style.backgroundColor = '#F2E8C9';
+            card.style.color = '#1C1C1C';
+        });
+    });
+});
+</script>
+</div>
+<div class="col-md-6">
+<div class="container mt-5">
+<h2 class="mb-4 text-center" style="font-family: 'Playfair Display', serif; color: #1C1C1C;">Contact Us</h2>
+<form class="p-4" id="contactForm" style="background-color: #F2E8C9; border: 2px solid #00FF41; border-radius: 10px;">
+<div class="mb-3">
+<label class="form-label" for="name" style="font-family: 'Courier New', monospace; color: #1C1C1C;">Name</label>
+<input class="form-control" id="name" required="" style="border-color: #00FF41;" type="text"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="email" style="font-family: 'Courier New', monospace; color: #1C1C1C;">Email</label>
+<input class="form-control" id="email" required="" style="border-color: #00FF41;" type="email"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="message" style="font-family: 'Courier New', monospace; color: #1C1C1C;">Message</label>
+<textarea class="form-control" id="message" required="" rows="4" style="border-color: #00FF41;"></textarea>
+</div>
+<button class="btn btn-primary" style="background-color: #00FF41; border-color: #00FF41; color: #1C1C1C; font-family: 'Courier New', monospace;" type="submit">Send</button>
+</form>
+<div class="mt-3 text-center" id="successMessage" style="display: none; color: #00FF41; font-family: 'Playfair Display', serif;">
+<p>Successfully sent!</p>
+</div>
+</div>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Simulate form submission
+  setTimeout(function() {
+    document.getElementById('contactForm').reset();
+    document.getElementById('successMessage').style.display = 'block';
+    
+    // Hide success message after 3 seconds
+    setTimeout(function() {
+      document.getElementById('successMessage').style.display = 'none';
+    }, 3000);
+  }, 500);
+});
+
+// Add glitch effect on hover
+const formInputs = document.querySelectorAll('input, textarea');
+formInputs.forEach(input => {
+  input.addEventListener('mouseover', function() {
+    this.style.transform = 'skew(2deg, 2deg)';
+    this.style.transition = 'transform 0.3s';
+  });
+  input.addEventListener('mouseout', function() {
+    this.style.transform = 'skew(0deg, 0deg)';
+  });
+});
+
+// Add flickering effect to the submit button
+const submitButton = document.querySelector('button[type="submit"]');
+setInterval(() => {
+  submitButton.style.opacity = (Math.random() * 0.4 + 0.6).toFixed(2);
+}, 100);
+</script>
+</div>
+</div>
+</div>
+<footer style="width: 100%; z-index: 1000;">
+<footer class="bg-dark text-light py-4">
+<div class="container">
+<div class="row">
+<div class="col-md-4 mb-3 mb-md-0">
+<h5 class="font-monospace text-glitchy-green">Leap_of_Pepe</h5>
+<p class="small">Exploring the quantum realms of meme consciousness</p>
+</div>
+<div class="col-md-4 mb-3 mb-md-0">
+<h5 class="font-monospace text-glitchy-green">Navigate the Memesphere</h5>
+<ul class="list-unstyled">
+<li><a class="text-light text-decoration-none hover-glitch" href="posts.html">Meme Manifestos</a></li>
+<li><a class="text-light text-decoration-none hover-glitch" href="about.html">About the Leap</a></li>
+<li><a class="text-light text-decoration-none hover-glitch" href="contacts.html">Contact the Void</a></li>
+<li><a class="text-light text-decoration-none hover-glitch" href="privacy_policy.html">Privacy in the Memetic Matrix</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<h5 class="font-monospace text-glitchy-green">Join the Collective</h5>
+<div class="d-flex justify-content-start">
+<a class="text-light me-3 hover-gold" href="#"><i class="fab fa-twitter fa-lg"></i></a>
+<a class="text-light me-3 hover-gold" href="#"><i class="fab fa-instagram fa-lg"></i></a>
+<a class="text-light me-3 hover-gold" href="#"><i class="fab fa-discord fa-lg"></i></a>
+<a class="text-light hover-gold" href="#"><i class="fab fa-reddit fa-lg"></i></a>
+</div>
+</div>
+</div>
+<hr class="my-4 bg-glitchy-green"/>
+<div class="row">
+<div class="col-md-6 text-center text-md-start">
+<p class="small mb-0">© 2024 Leap_of_Pepe. All rights reserved in this dimension.</p>
+</div>
+<div class="col-md-6 text-center text-md-end">
+<p class="small mb-0">Crafted in the digital ether by meme philosophers</p>
+</div>
+</div>
+</div>
+</footer>
+<style>
+    .text-glitchy-green {
+        color: #00FF41;
+    }
+    .hover-glitch:hover {
+        text-shadow: 2px 2px #00FF41, -2px -2px #FFD700;
+        transition: text-shadow 0.3s ease;
+    }
+    .hover-gold:hover {
+        color: #FFD700 !important;
+        transition: color 0.3s ease;
+    }
+</style>
+<script>
+document.querySelectorAll('.hover-glitch').forEach(link => {
+    link.addEventListener('mouseover', (e) => {
+        e.target.style.transform = `translate(${Math.random()*5-2.5}px, ${Math.random()*5-2.5}px)`;
+    });
+    link.addEventListener('mouseout', (e) => {
+        e.target.style.transform = 'translate(0, 0)';
+    });
+});
+</script>
+</footer>
+</body>
+</html>
